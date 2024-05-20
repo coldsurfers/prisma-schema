@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/prisma-schema",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "repository": "https://github.com/coldsurfers/prisma-schema",
   "license": "MIT",
   "author": "yungblud <killi8n@gmail.com>",
@@ -8,7 +8,11 @@
   "types": "index.d.ts",
   "scripts": {
     "generate": "npx prisma generate",
-    "postinstall": "npm run generate"
+    "postinstall": "npm run generate",
+    "prerelease": "yarn generate",
+    "release": "release-it minor --ci",
+    "prerelease:rc": "yarn generate",
+    "release:rc": "release-it --ci --preRelease=rc"
   },
   "devDependencies": {
     "@prisma/client": "^5.14.0",
